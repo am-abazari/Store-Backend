@@ -1,5 +1,4 @@
-const router = express.Router();
+const router = require('express').Router();
 module.exports ={
-    AllRoutes : router,
-    
+    AllRoutes : router,   
 }
