@@ -4,19 +4,12 @@ const path = require('path');
 
 class Application {
     #app = express();
-    #DB_URI; #PORT;
     constructor(PORT, DB_URI) {
-        this.#PORT = PORT;
-        this.#DB_URI = DB_URI;
-
         this.configApplication();
         this.connectToMongoDB(DB_URI);
         this.createServer(PORT);
         this.createRoutes();
         this.errorHandling();
-
-
-
     }
     configApplication() {
         this.#app.use(express.json());
