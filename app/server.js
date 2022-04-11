@@ -31,7 +31,15 @@ class Application {
             if (!error) return console.log("Connected to DataBase Successfully ...");
             return console.log("Failed to Connect to DataBase");
         })
+        mongoose.connection.on("connected", () => {
+            console.log("Mongoose Connected to DataBase");
+        })
+        mongoose.connection.on("disconnected", () => { console.log("Mongoose Disconnected") })
 
+        process.on("SIGINT", async () => {
+            await mongoose.connection.close();
+            process.exit(0);
+        })
     }
     createRoutes() {
         this.#app.use(AllRoutes)
