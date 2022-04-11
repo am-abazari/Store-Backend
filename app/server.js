@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
 const { AllRoutes } = require('./router/router');
-
+const createError = require('http-errors');
 class Application {
     #app = express();
     constructor(PORT, DB_URI) {
@@ -47,11 +47,7 @@ class Application {
     }
     errorHandling() {
         this.#app.use((req, res, next) => {
-            return res.status(404).json({
-                status: 404,
-                message: "URL Not Found ! #404",
-                success: false,
-            })
+            next(createError.NotFound("URL Not Found | #404"))
         })
 
         this.#app.use((error, req, res, next) => {
