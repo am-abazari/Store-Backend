@@ -51,12 +51,16 @@ class Application {
         })
 
         this.#app.use((error, req, res, next) => {
-            const status = error.status;
-            const message = error.message || "InternalServerError";
+            const serverError = createError.InternalServerError();
+            const status = error.status || serverError.status;
+            const message = error.message || serverError.message;
             return res.status(status).json({
-                status,
-                message,
-            })
+                errors: {
+                    status,
+                    message,
+                }
+            }
+            )
         })
     }
 
