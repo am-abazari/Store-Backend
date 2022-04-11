@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 const path = require('path');
 const { AllRoutes } = require('./router/router');
 
 class Application {
     #app = express();
     constructor(PORT, DB_URI) {
+        this.#app.use(morgan("dev"))
         this.configApplication();
         this.connectToMongoDB(DB_URI);
         this.createServer(PORT);
