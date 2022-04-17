@@ -7,6 +7,7 @@ const createError = require('http-errors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const cors = require('cors');
+
 class Application {
     #app = express();
     constructor(PORT, DB_URI) {
