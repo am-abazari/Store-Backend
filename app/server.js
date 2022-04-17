@@ -6,7 +6,7 @@ const { AllRoutes } = require('./router/router');
 const createError = require('http-errors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
-
+const cors = require('cors');
 class Application {
     #app = express();
     constructor(PORT, DB_URI) {
@@ -18,6 +18,7 @@ class Application {
 
     }
     configApplication(PORT) {
+        this.#app.use(cors());
         this.#app.use(morgan("dev"))
         this.#app.use(express.json());
         this.#app.use(express.urlencoded({ extended: true }));
