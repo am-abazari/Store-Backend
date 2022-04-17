@@ -9,8 +9,7 @@ const SignAccessToken = (userID) => {
     return new Promise(async (resolve, reject) => {
         const user = await UserModel.findById(userID)
         const payload = {
-            mobile: user.mobilem,
-            userID: user._id
+            mobile: user.mobile,
         };
         const options = {
             expiresIn: "1h",
@@ -23,4 +22,5 @@ const SignAccessToken = (userID) => {
         })
     })
 }
+
 module.exports = { RandomNumberGenerator, SignAccessToken }
