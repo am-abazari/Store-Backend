@@ -17,7 +17,6 @@ class Application {
         this.createServer(PORT);
         this.createRoutes();
         this.errorHandling();
-
     }
     configApplication(PORT) {
         this.#app.use(cors());
