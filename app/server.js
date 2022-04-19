@@ -13,6 +13,7 @@ class Application {
     constructor(PORT, DB_URI) {
         this.configApplication(PORT);
         this.connectToMongoDB(DB_URI);
+        this.initRedis();
         this.createServer(PORT);
         this.createRoutes();
         this.errorHandling();
@@ -60,6 +61,9 @@ class Application {
             await mongoose.connection.close();
             process.exit(0);
         })
+    }
+    initRedis(){
+        require("./utils/init_redis");
     }
     createRoutes() {
         this.#app.use(AllRoutes)
