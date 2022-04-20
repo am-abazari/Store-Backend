@@ -18,7 +18,6 @@ const SignAccessToken = (userID) => {
         JWT.sign(payload, ACCESS_TOKEN_SECRET_KEY, options, (error, token) => {
             if (error) reject(createHttpError.InternalServerError("Internal Server Error"));
             else resolve(token);
-
         })
     })
 }
