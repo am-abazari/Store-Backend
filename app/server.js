@@ -71,7 +71,6 @@ class Application {
         this.#app.use((req, res, next) => {
             next(createError.NotFound("URL Not Found | #404"))
         })
-
         this.#app.use((error, req, res, next) => {
             const serverError = createError.InternalServerError();
             const status = error.status || serverError.status;
