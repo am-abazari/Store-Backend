@@ -51,5 +51,4 @@ function VerifyRefreshToken(token) {
     })
 }
 
-
 module.exports = { RandomNumberGenerator, SignAccessToken, SignRefreshToken, VerifyRefreshToken }
