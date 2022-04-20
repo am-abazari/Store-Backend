@@ -61,7 +61,7 @@ class Application {
             process.exit(0);
         })
     }
-    initRedis(){
+    initRedis() {
         require("./utils/init_redis");
     }
     createRoutes() {
