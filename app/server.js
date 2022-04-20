@@ -66,7 +66,6 @@ class Application {
     }
     createRoutes() {
         this.#app.use(AllRoutes)
-
     }
     errorHandling() {
         this.#app.use((req, res, next) => {
