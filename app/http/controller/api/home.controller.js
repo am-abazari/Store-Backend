@@ -1,7 +1,6 @@
 const createHttpError = require("http-errors");
 const { authSchema } = require("../../validator/user/auth.schema");
 const Controller = require("../controller");
-
 class HomeController extends Controller {
     async indexPage(req, res, next) {
         try {
