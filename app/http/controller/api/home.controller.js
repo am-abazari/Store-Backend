@@ -12,6 +12,6 @@ class HomeController extends Controller {
         } catch (error) {
             next(error)
         }
-    }
+   }
 }
 module.exports = new HomeController;
