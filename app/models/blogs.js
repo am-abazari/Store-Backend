@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const Schema = new mongoose.Schema({
     author: { type: mongoose.Types.ObjectId, required: true, },
     title: { type: String, required: true, },
