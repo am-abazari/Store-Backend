@@ -11,7 +11,6 @@ const Schema = new mongoose.Schema({
     dislike: { type: [mongoose.Types.ObjectId], default: [] },
     bookmark: { type: [mongoose.Types.ObjectId], default: [] },
 })
-
 module.exports = {
     BlogModel: mongoose.model("blog", Schema)
 }
