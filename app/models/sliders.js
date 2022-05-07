@@ -4,7 +4,6 @@ const Schema = new mongoose.Schema({
     text: { type: String },
     image: { type: String, required: true },
 })
-
 module.exports = {
     BlogModel: mongoose.model("", Schema)
 }
