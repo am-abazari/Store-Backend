@@ -8,7 +8,7 @@ class HomeController extends Controller {
                 status: 200,
                 success: true,
                 message: "Index Page",
-            })
+           })
         } catch (error) {
             next(error)
         }
